@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<head>
+<title>Locadora Porto Seguro</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+<link href="https://fonts.googleapis.com/css?family=Montserrat"
+	rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Lato"
+	rel="stylesheet" type="text/css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+<link rel="stylesheet" type="text/css"
+	href="/Locadora_POO/resources/css/home.css" />
+
+<script type="text/javascript">  
+function click_button(){	
+var campo = document.getElementById("exampleFormControlSelect1").value;
+
+if(campo == "Sedan"){
+			window.location.href = "sedan.xhtml";
+        } else if (campo == "Esporte"){
+        	window.location.href = "esporte.xhtml";
+        } else if(campo == "SUV") {
+        	window.location.href = "suv.xhtml";
+        }
+  }
+  </script>
+
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar"
+	data-offset="60">
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#myNavbar">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#myPage">PORTO SEGURO</a>
+		</div>
+
+
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#home">HOME</a></li>
+				<li><a href="#pricing">VEICULOS</a></li>
+				<li><a href="#feedback">FEEDBACK</a></li>
+				<li><a href="login.xhtml">LOGIN</a></li>
+			</ul>
+		</div>
+	</div>
+	</nav>
+
+
+
+	<div id="home" class="jumbotron text-center">
+		<section class="search-sec">
+		<div class="container">
+			<form action="#" method="post" novalidate="novalidate">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="row">
+							<div class="col-lg-3 col-md-3 col-sm-12 p-0">
+								<input id="campo1" type="text" class="form-control search-slt"
+									placeholder="Estado" />
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-12 p-0">
+								<input type="text" class="form-control search-slt"
+									placeholder="Cidade" />
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-12 p-0">
+								<select class="form-control search-slt"
+									id="exampleFormControlSelect1">
+									<option>Selecione o tipo do veiculo</option>
+									<option>Sedan</option>
+									<option>Esporte</option>
+									<option>SUV</option>
+
+								</select>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-12 p-0">
+								<button onClick="click_button();" type="button"
+									class="btn btn-danger wrn-btn">Pesquisar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		</section>
+		<form></form>
+	</div>
+
+<h:form rendered="#{usuarioLogado != null}"> <!-- se usuário logado não for null o link de Logout aparece -->
+	<div id="logout">
+			<img src="https://img.icons8.com/ios/26/000000/logout-rounded-left-filled.png"/>
+			<br/>
+			<h:commandLink value="Logout" action="#{loginController.deslogar}"/>
+		</div>
+		</h:form>
+
+
+	<div id="home" class="container marketing">
+		<div class="row">
+			<div class="col-lg-4">
+				<img class="rounded-circle"
+					src="/Locadora_POO/resources/img/online_checkin.png" width="50"
+					height="50" />
+				<h2>Check-In Online</h2>
+				<p>Facilite todos os processos e pegue a estrada mais
+					r&#225;pido com o nosso serviço de reservas online.</p>
+
+			</div>
+			<!-- /.col-lg-4 -->
+			<div class="col-lg-4">
+				<img class="rounded-circle"
+					src="/Locadora_POO/resources/img/secured.png" width="50"
+					height="50" />
+				<h2>Segurança de Dados</h2>
+				<p>Nossos servi&#231;os garantem a segurança de todos os dados
+					durante todo o seu periodo de reserva.</p>
+
+			</div>
+			<!-- /.col-lg-4 -->
+			<div class="col-lg-4">
+				<img class="rounded-circle"
+					src="/Locadora_POO/resources/img/loyalty.png" width="50"
+					height="50" />
+				<h2>Privilégios</h2>
+				<p>Torne-se nosso cliente potencial e receba diversas promoções
+					para garantir o conforto da sua viagem.</p>
+			</div>
+			<!-- /.col-lg-4 -->
+		</div>
+		<!-- /.row -->
+	</div>
+
+
+	<div id="pricing" class="container-fluid">
+		<div class="text-center">
+			<h2>Modelos disponiveis</h2>
+			<h4>Escolha o modelo que deseja alugar</h4>
+		</div>
+
+
+		<div class="row slideanim">
+
+
+			<div class="col-sm-4 col-xs-12">
+				<div class="panel panel-default text-center">
+					<div class="panel-heading">
+						<h1>Sedan</h1>
+						<br /> <br /> <img src="/Locadora_POO/resources/img/sedan.png"
+							height="100" widht="100" />
+					</div>
+					<div class="panel-body">
+						<p>Ar-condicionado</p>
+						<p>Bluetooth</p>
+						<p>Airbag</p>
+						<p>Dire&#231;&#227;o Hidraulica</p>
+						<p>3 malas</p>
+
+					</div>
+					<div class="panel-footer">
+						<h3>A partir de R$109</h3>
+						<h4>por dia</h4>
+						<a href="sedan.xhtml"><input type="button" value="Ver Opções" /></a>
+					</div>
+				</div>
+
+
+			</div>
+			<div class="col-sm-4 col-xs-12">
+				<div class="panel panel-default text-center">
+					<div class="panel-heading">
+						<h1>Esportivo</h1>
+						<br /> <br /> <img src="/Locadora_POO/resources/img/esporte.png"
+							height="100" widht="100" />
+					</div>
+					<div class="panel-body">
+						<p>Ar-condicionado</p>
+						<p>Bluetooth</p>
+						<p>Airbag</p>
+						<p>Dire&#231;&#227;o Hidraulica</p>
+						<p>2 malas</p>
+
+					</div>
+					<div class="panel-footer">
+						<h3>A partir de R$121</h3>
+						<h4>por dia</h4>
+						<a href="esporte.xhtml"><input type="button"
+							value="Ver Opções" /></a>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-sm-4 col-xs-12">
+				<div class="panel panel-default text-center">
+					<div class="panel-heading">
+						<h1>SUV</h1>
+						<br /> <br /> <img src="/Locadora_POO/resources/img/SUV.png"
+							height="100" widht="100" />
+					</div>
+					<div class="panel-body">
+						<p>Ar-condicionado</p>
+						<p>Bluetooth</p>
+						<p>Airbag</p>
+						<p>Dire&#231;&#227;o Hidraulica</p>
+						<p>Piloto Automatico</p>
+
+
+
+					</div>
+					<div class="panel-footer">
+						<h3>A partir de R$149</h3>
+						<h4>por dia</h4>
+						<a href="suv.xhtml"><input type="button" value="Ver Opções" /></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<form id="feedback">
+		<section id="contato" class="section-8">
+		<div class="container">
+			<div id="titulo-contato">
+				<h1>SUGESTÕES</h1>
+			</div>
+			<div class="row">
+				<div class="col-md-4" id="texto-contato">
+
+					<h2>Endereço</h2>
+
+
+					<div id="endereco">
+						<img id="icones"
+							src="https://img.icons8.com/material/24/000000/address.png" />
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<p>
+							<h3>Águia de Haia, 2983 - Cidade Antônio Estêvão de
+								Carvalho, São Paulo - SP</h3>
+						</p>
+					</div>
+					<hr />
+					<h2>Contato</h2>
+
+
+					<div id="area-telefone">
+						<img id="icones"
+							src="https://img.icons8.com/material/24/000000/phone.png" />&nbsp;&nbsp;&nbsp;&nbsp;
+						<h3>(11) 2049-2600</h3>
+					</div>
+
+					<div id="area-email">
+						<img id="icones"
+							src="https://img.icons8.com/material-rounded/24/000000/new-post.png" />&nbsp;&nbsp;&nbsp;&nbsp;
+						<h3>locadoraps@ps.com.br</h3>
+					</div>
+				</div>
+
+
+				<div class="col-md-8">
+
+					<div id="area-formulario-contato">
+						<h:form>
+							<div id="envio-contato">
+								<div class="row">
+									<div class="col-md-12 form-group">
+										<h:inputText value="#{sugestaoController.sugestao.nome}" type="text" name="tNome" id="cNome"
+											styleClass="form-control" pt:placeholder="Digite seu Nome" />
+									</div>
+									<div class="col-md-12 form-group">
+										<h:inputText value="#{sugestaoController.sugestao.email}" type="email" name="tEmail" id="cEmail"
+											class="form-control" pt:placeholder="Digite seu Email" />
+									</div>
+									<div class="col-md-6 form-group">
+										<h:inputText value="#{sugestaoController.sugestao.telefone_01}" type="text" name="tFone" class="form-control"
+											id="cTelefone" pt:placeholder="Digite seu Telefone" />
+									</div>
+
+									<div class="col-md-6 form-group">
+										<h:inputText value="#{sugestaoController.sugestao.telefone_02}" type="text" name="tCel" id="Cel" class="form-control"
+											pt:placeholder="Digite seu Celular" />
+									</div>
+
+									<div class="col-md-12 form-group">
+										<h:inputText value="#{sugestaoController.sugestao.assunto}" type="text" name="tAssunto" id="cAssunto"
+											class="form-control" pt:placeholder="Digite o Assunto" />
+									</div>
+
+									<div class="col-md-12 form-group">
+										<h:inputTextarea  value="#{sugestaoController.sugestao.texto}" name="tMsg" id="cMsg" cols="97" rows="5"
+											class="form-control" pt:placeholder="Deixe aqui a sua mensagem" />
+											
+									</div>
+									<div class="col-md-12 form-group">
+										
+										<h:commandButton id="botao-enviar" value="Enviar" action="#{sugestaoController.salvaSugestao}" styleClass="btn btn-light btn-block pt-button light azul"/>
+									</div>
+								</div>
+							</div>
+						</h:form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<iframe id="google-maps"
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.317761341615!2d-46.47796778502287!3d-23.52107088470297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce61270808f47f%3A0xddc2deca4778eb69!2sFatec+Zona+Leste!5e0!3m2!1spt-BR!2sbr!4v1558295546864!5m2!1spt-BR!2sbr"
+			frameborder="0" style="border: 0"></iframe> </section>
+	</form>
+        <footer class="rodape">
+            <p>Copyright © 2019 - Locadora PS LTDA.</p>
+        </footer>
+
+
+
+	<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos &lt; winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+
+</body>
+</html>

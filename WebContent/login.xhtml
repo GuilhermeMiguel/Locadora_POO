@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<head>
+<title>Login</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css"></link>
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css"
+	href="/Locadora_POO/resources/css/login.css" />
+
+<script>
+	function cadastro() {
+		var email = document.getElementById("email-value").value;
+		var senha1 = document.getElementById("senha-1").value;
+		var senha2 = document.getElementById("senha-2").value;
+
+		if (email == "") {
+			alert("Preencha o email");
+		} else if(senha1 == "") {
+			alert("Preencha a senha");
+		}
+		 else if(senha1 != senha2){
+			alert("Confirme a senha");
+		} else{
+			window.open("cadastro.xhtml");
+		}
+		
+	}
+</script>
+
+
+</head>
+<body>
+
+	<div class="container login-container">
+		<div class="row">
+			<div class="col-md-6 login-form-1">
+				<h3>Login</h3>
+				<h:form>
+					<div class="form-group">
+					<h:inputText id="email" name="email" value="#{loginController.usuario.email}" 
+			pt:placeholder="Email *" class="form-control input-md" 
+			required="" type="text" maxlength="30" pattern="[0-9]+$" />	
+					</div>
+					<div class="form-group">
+					<h:inputText id="senha" name="senha" value="#{loginController.usuario.senha}" 
+			pt:placeholder="Senha*" class="form-control input-md" 
+			required="" type="password" maxlength="11" pattern="[0-9]+$" >
+			<f:passThroughAttribute name="type" value="password" />
+			</h:inputText>	
+					</div>
+					<div class="form-group">
+					<h:commandButton type="buttonL" value="Logar" action="#{loginController.efetuaLogin}" styleClass="btnSubmit" />
+						
+					</div>
+				</h:form>
+			</div>
+			<div class="col-md-6 login-form-2">
+				<h3>Registrar</h3>
+				<form>
+					<div class="form-group">
+						<input id="email-value" type="text" class="form-control"
+							placeholder="Email *" value="" />
+					</div>
+					<div class="form-group">
+						<input id="senha-1" type="password" class="form-control"
+							placeholder="Senha*" value="" />
+					</div>
+					<div class="form-group">
+						<input id="senha-2" type="password" class="form-control"
+							placeholder="Confirme sua senha*" value="" />
+					</div>
+					<div class="form-group">
+						<input onClick="cadastro();" type="submit" class="btnSubmit"
+							value="Registrar" />
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

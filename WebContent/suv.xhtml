@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<head>
+<title>SUV</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+<link href="https://fonts.googleapis.com/css?family=Montserrat"
+	rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Lato"
+	rel="stylesheet" type="text/css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="canonical"
+	href="https://getbootstrap.com/docs/4.0/examples/pricing/" />
+
+
+<link rel="stylesheet" type="text/css"
+	href="/Locadora_POO/resources/css/suv.css" />
+
+
+<script type="text/javascript">
+	function click_button() {
+		var campo = document.getElementById("exampleFormControlSelect1").value;
+
+		if (campo == "Sedan") {
+			window.location.href = "sedan.xhtml";
+		} else if (campo == "Esporte") {
+			window.location.href = "esporte.xhtml";
+		} else if (campo == "SUV") {
+			window.location.href = "suv.xhtml";
+		}
+	}
+
+	function chamaTela() {
+		window.open("reserva.xhtml");
+	}
+</script>
+
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar"
+	data-offset="60">
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#myNavbar">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#myPage">PORTO SEGURO</a>
+		</div>
+
+
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="telaInicia.xhtml">HOME</a></li>
+				<li><a href="telaInicia.xhtml#pricing">VEICULOS</a></li>
+				<li><a href="telaInicia.xhtml#feedback">FEEDBACK</a></li>
+				<li><a href="login.xhtml">LOGIN</a></li>
+			</ul>
+		</div>
+	</div>
+	</nav>
+
+
+	<div id="home" class="jumbotron text-center">
+		<section class="search-sec">
+		<div class="container">
+			<form action="#" method="post" novalidate="novalidate">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="row">
+							<div class="col-lg-3 col-md-3 col-sm-12 p-0">
+								<input type="text" class="form-control search-slt"
+									placeholder="Estado" />
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-12 p-0">
+								<input type="text" class="form-control search-slt"
+									placeholder="Cidade" />
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-12 p-0">
+								<select class="form-control search-slt"
+									id="exampleFormControlSelect1">
+									<option>Selecione o tipo do veiculo</option>
+									<option>Sedan</option>
+									<option>Esporte</option>
+									<option>SUV</option>
+
+								</select>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-12 p-0">
+								<button onClick="click_button();" type="button"
+									class="btn btn-danger wrn-btn">Pesquisar</button>
+									
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		</section>
+		
+	</div>
+	
+	<h:form rendered="#{usuarioLogado != null}"> <!-- se usuário logado não for null o link de Logout aparece -->
+	<div id="logout">
+			<img src="https://img.icons8.com/ios/26/000000/logout-rounded-left-filled.png"/>
+			<br/>
+			<h:commandLink value="Logout" action="#{loginController.deslogar}"/>
+		</div>
+		</h:form>
+<h:form>
+	<div id="sobre" class="container marketing">
+		<div class="row">
+			<div class="col-12">
+				<div id="nome-carro2" class="col-md-4">
+					<h1>Ecosport 2.0</h1>
+					<h2>SUV Completo</h2>
+					<h3>Ford | Flex | 2019</h3>
+				</div>
+				<div id="caixa-carro2" class="col-md-4">
+					<img src="/Locadora_POO/resources/img/ecosport.png" height="80"
+						widht="80" />
+				</div>
+				<div id="caixa-valor2" class="col-md-4">
+					<center>
+						<h3>Km Livre</h3>
+					</center>
+					<hr />
+					<center>
+						<h1>R$ 150 - Di&#225;ria</h1>
+					</center>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<div class="col-md-4"></div>
+						<div class="col-md-4"></div>
+						<div class="col-md-4-12">
+						<h:commandButton id="botaoEcoSport" value="Reservar" action="#{aluguelController.reservaEcoSport}"  styleClass="btn btn-primary"/>						
+						</div>
+
+						<!--BOTAO DETALHE -->
+
+						<button type="button" class="btn btn-info btn-lg"
+							data-toggle="modal" data-target="#myModal">Detalhes</button>
+
+						<div id="myModal" class="modal fade" role="dialog">
+							<div class="modal-dialog">
+
+								<!-- Modal content-->
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+										<h4 class="modal-title">Ecosport 2.0</h4>
+									</div>
+									<div class="modal-body">
+										<h3>Ar-Condicionado</h3>
+										<h3>Airbag</h3>
+										<h3>Dire&#231;&#227;o Hidraulica</h3>
+										<h3>Autom&#225;tico</h3>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default"
+											data-dismiss="modal">Fechar</button>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<hr />
+
+	<div id="sobre" class="container marketing">
+		<div class="row">
+			<div class="col-12">
+				<div id="nome-carro" class="col-md-4">
+					<h1>Kicks 1.6</h1>
+					<h2>Sedan Completo</h2>
+					<h3>Nissan | Flex | 2019</h3>
+				</div>
+				<div id="caixa-carro" class="col-md-4">
+					<img src="/Locadora_POO/resources/img/kicks.png" height="100"
+						widht="100" />
+				</div>
+				<div id="caixa-valor" class="col-md-4">
+					<center>
+						<h3>Km Livre</h3>
+					</center>
+					<hr />
+					<center>
+						<h1>R$ 161 - Di&#225;ria</h1>
+					</center>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<div class="col-md-4"></div>
+						<div class="col-md-4"></div>
+						<div class="col-md-4-12">
+						<h:commandButton id="botaoKicks" value="Reservar" action="#{aluguelController.reservaKicks}"  styleClass="btn btn-primary"/>						</div>
+							<!--           BOTAO DETALHE -->
+							<button type="button" class="btn btn-info btn-lg"
+								data-toggle="modal" data-target="#myModal2">Detalhes</button>
+
+							<div id="myModal2" class="modal fade" role="dialog">
+								<div class="modal-dialog">
+
+									<!-- Modal content-->
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal">&times;</button>
+											<h4 class="modal-title">Nissan Kicks 1.6</h4>
+										</div>
+										<div class="modal-body">
+											<h3>Ar-Condicionado</h3>
+											<h3>Airbag</h3>
+											<h3>Dire&#231;&#227;o Hidraulica</h3>
+											<h3>Autom&#225;tico</h3>
+											<h3>Multimidia Bluetooth</h3>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default"
+												data-dismiss="modal">Fechar</button>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+	<hr />
+
+	<div id="sobre" class="container marketing">
+		<div class="row">
+			<div class="col-12">
+				<div id="nome-carro3" class="col-md-4">
+					<h1>Renault Duster 1.6</h1>
+					<h2>SUV Completo</h2>
+					<h3>Renault | Flex | 2017</h3>
+				</div>
+				<div id="caixa-carro3" class="col-md-4">
+					<img src="/Locadora_POO/resources/img/duster.png" height="100"
+						widht="100" />
+				</div>
+				<div id="caixa-valor3" class="col-md-4">
+					<center>
+						<h3>Km Livre</h3>
+					</center>
+					<hr />
+					<center>
+						<h1>R$ 147 - Di&#225;ria</h1>
+					</center>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<div class="col-md-4"></div>
+						<div class="col-md-4"></div>
+						<div class="col-md-4-12">
+						<h:commandButton id="botaoDuster" value="Reservar" action="#{aluguelController.reservaDuster}"  styleClass="btn btn-primary"/>						</div>
+
+							<button id="btn-detail" type="button" class="btn btn-info btn-lg"
+								data-toggle="modal" data-target="#myModal3">Detalhes</button>
+
+							<div id="myModal3" class="modal fade" role="dialog">
+								<div class="modal-dialog">
+
+									<!-- Modal content-->
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal">&times;</button>
+											<h4 class="modal-title">Renault Duster 1.6</h4>
+										</div>
+										<div class="modal-body">
+											<h3>Ar-Condicionado</h3>
+											<h3>Airbag</h3>
+											<h3>Dire&#231;&#227;o Hidraulica</h3>
+											<h3>Autom&#225;tico</h3>
+											<h3>Multimidia Bluetooth</h3>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</h:form>
+</body>
+</html>

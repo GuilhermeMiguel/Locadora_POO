@@ -1,0 +1,125 @@
+@charset "ISO-8859-1";
+@charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+ body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+    overflow-x: hidden; 
+  }
+  
+  h1{
+  font-size 16px;
+  color: #f4511e;
+  font-family: Titillium Web;
+    line-height: 1.334;
+    font-weight: 400;
+  }
+  h2 {
+    font-size: 17px;
+    text-transform: uppercase;
+    color: #f4511e;
+    font-family: Titillium Web;
+    line-height: 1.334;
+    font-weight: 400;
+  }
+  h3{
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #425a68;
+    font-family: Titillium Web;
+    line-height: 1.334;
+    font-weight: 400;
+  }
+  
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }  
+  .jumbotron {
+  	widht:600px;
+  	height:15%;
+  	background-size: 100%;
+    background-color: #f4511e;
+
+    color: #fff;
+    font-family: Montserrat, sans-serif;
+  }
+  
+  .navbar {
+    margin-bottom: 0;
+    background-color: #f4511e;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #f4511e !important;
+    background-color: #fff !important;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+
+#logout {
+	border-style: groove;
+    widht: 10%;
+    width: 55px;
+    text-align: center;
+    margin-right: 0px;
+    margin-top: -28px;
+    float: right;
+	
+}
+
+#logout a {
+	color: black;
+}
+  
+
+.form-horizontal{
+	margin-top: 9%;
+	border-style;
+	border-style: solid;
+    border-color: #f4511e;
+    width: 80%;
+    margin-left: 8%;
+    border-width: 1px;
+    /* margin-top: 5%; */
+}
+
+@media{
+    .search-sec{
+        margin-top: 3%;
+/*         background: rgba(255,131,0,0.3); */
+        
+    }
+}
+
+.btn-primary{
+	background-color: #f4511e;
+	border-color: #f4511e;
+}
+
+.btn-primary:hover{
+	background-color: #f4511e;
+	border-color: #f4511e;
+}
+
+

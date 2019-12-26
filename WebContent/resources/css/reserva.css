@@ -1,0 +1,190 @@
+@charset "ISO-8859-1";
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
+	font: 400 15px Lato, sans-serif;
+	line-height: 1.8;
+	color: #818181;
+	overflow-x: hidden;
+}
+
+h1 {font-size 16px;
+	color: #f4511e;
+	font-family: Titillium Web;
+	line-height: 1.334;
+	font-weight: 400;
+}
+
+h2 {
+	font-size: 17px;
+	text-transform: uppercase;
+	color: #f4511e;
+	font-family: Titillium Web;
+	line-height: 1.334;
+	font-weight: 400;
+}
+
+h3 {
+	font-size: 16px;
+	text-transform: uppercase;
+	color: #425a68;
+	font-family: Titillium Web;
+	line-height: 1.334;
+	font-weight: 400;
+}
+
+h4 {
+	font-size: 19px;
+	line-height: 1.375em;
+	color: #303030;
+	font-weight: 400;
+	margin-bottom: 30px;
+}
+
+.navbar {
+	margin-bottom: 0;
+	background-color: #f4511e;
+	z-index: 9999;
+	border: 0;
+	font-size: 12px !important;
+	line-height: 1.42857143 !important;
+	letter-spacing: 4px;
+	border-radius: 0;
+	font-family: Montserrat, sans-serif;
+}
+
+.navbar li a, .navbar .navbar-brand {
+	color: #fff !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+	color: #f4511e !important;
+	background-color: #fff !important;
+}
+
+.item h4 {
+	font-size: 19px;
+	line-height: 1.375em;
+	font-weight: 400;
+	font-style: italic;
+	margin: 70px 0;
+}
+
+#logout {
+	border-style: groove;
+    widht: 10%;
+    width: 55px;
+    text-align: center;
+    margin-right: 0px;
+    margin-top: -15px;
+    float: right;
+	
+}
+
+#logout a {
+	color: black;
+}
+  
+
+#nome-carro2 {
+	margin-top: 60px;
+	margin-left: 10%;
+}
+
+#nome-carro2 p { 
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#caixa-valor2 h3 {
+	font-weight: bold;
+}
+
+#caixa-carro2 {
+	margin-top: 80px;
+	margin-left: -10%;
+}
+
+#caixa-carro2 img {
+	widht: 210px;
+	height: 210px;
+}
+
+#caixa-valor2 {
+	margin-top: 60px;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 5px;
+	border-color: #faa689;
+}
+
+.btn-primary {
+	margin-top: 20px;
+	width: 380px;
+	height: 50px;
+	border-radius: 100;
+	background-color: #f4511e;
+	border-color: #f4511e;
+	font-family: Titillium Web;
+	font-size: 20px;
+}
+
+.btn-primary:hover {
+	color: white;
+	background-color: #faa98d;
+	border-color: #faa98d;
+	font-family: Titillium Web;
+	font-size: 20px;
+}
+
+.btn-info {
+	position: center;
+	margin-left: 165px;
+	margin-top: -90px;
+	background-color: #f4511e;
+	border-color: #f4511e;
+}
+
+.modal-content {
+	position: relative;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #999;
+	border: 1px solid rgba(0, 0, 0, .2);
+	border-radius: 6px;
+	-webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+	box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+	outline: 0;
+	margin-top: 350px;
+}
+
+#btn-detail {
+	margin-top: -103px;
+	margin-right: 1000px;
+}
+
+.btn-info:hover {
+	background-color: #f4511e;
+	border-color: #f4511e;
+}
+
+#sobre {
+	margin-top: 5%;
+}
+
+#dados {
+	margin-top: 5%;
+}
+
+#dados h1 {
+	margin-bottom: 3%; font-size 16px :;
+	color: #f4511e;
+	font-family: Titillium Web;
+	line-height: 1.334;
+	font-weight: 400;
+	text-align: center;
+	font-size 16px:;
+}
