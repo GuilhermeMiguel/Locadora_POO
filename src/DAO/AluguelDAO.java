@@ -23,9 +23,9 @@ public class AluguelDAO {
 		}
 
 		return instance;
-	}
+	} 
 
-
+ 
 	public void create(Aluguel c) {
 
 		Connection con = ConnectionFactory.getConnection();

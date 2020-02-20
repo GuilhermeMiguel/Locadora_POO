@@ -4,8 +4,10 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import DAO.UsuarioDAO;
+import lombok.Data;
 import modelo.Usuario;
 
+@Data
 @ManagedBean
 @SessionScoped
 public class UsuarioController {
@@ -15,14 +17,6 @@ public class UsuarioController {
 
 	public UsuarioController() {
 		usuario = new Usuario();
-	}
-
-	public Usuario getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
 	}
 
 	public void salvaUsuario() {

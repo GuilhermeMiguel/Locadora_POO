@@ -21,9 +21,9 @@ public class UsuarioDAO {
 			instance = new UsuarioDAO();
 		}
 		
-		return instance;
+		return instance; 
 	}
-
+ 
 	public void create(Usuario c) {
 
 		Connection con = ConnectionFactory.getConnection();

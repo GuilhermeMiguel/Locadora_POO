@@ -1,5 +1,10 @@
 package util;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import javax.faces.application.NavigationHandler;
 import javax.faces.context.FacesContext;
 import javax.faces.event.PhaseEvent;
@@ -22,37 +27,14 @@ public class Autorizador implements PhaseListener {
 		
 		System.out.println(nomePagina);
 		
-		if("/telaInicia.xhtml".equals(nomePagina)) {
-			return;
-		}
+		List<String> telas = Arrays.asList("/telaInicia.xhtml", "/index.xhtml", "/cadastroa.xhtml", "/sedan.xhtml"
+				+ "/suv.xhtml", "/esporte.xhtml", "/cadastro.xhtml", "/login.xhtml");
 		
-		if("/index.xhtml".equals(nomePagina)) {
-			return;
-		}
+		telas = telas.stream().filter(x -> x.equals(nomePagina)).collect(Collectors.toList());
 		
-		if("/cadastroa.xhtml".equals(nomePagina)) {
+		if(telas.size() > 0) {
 			return;
-		}
-		
-		if("/sedan.xhtml".equals(nomePagina)) {
-			return;
-		}
-		
-		if("/suv.xhtml".equals(nomePagina)) {
-			return;
-		}
-		
-		if("/esporte.xhtml".equals(nomePagina)) {
-			return;
-		}
-		
-		if("/cadastro.xhtml".equals(nomePagina)) {
-			return;
-		}
-		
-		if("/login.xhtml".equals(nomePagina)) {
-			return; //continua normalmente a execução
-		}
+		} 
 		
 		Usuario usuarioLogado = (Usuario) context.getExternalContext().getSessionMap().get("usuarioLogado");
 		

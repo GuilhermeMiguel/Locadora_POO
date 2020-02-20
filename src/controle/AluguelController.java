@@ -6,8 +6,10 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import DAO.AluguelDAO;
+import lombok.Data;
 import modelo.Aluguel;
 
+@Data
 @ManagedBean
 @SessionScoped
 public class AluguelController {
@@ -20,14 +22,6 @@ public class AluguelController {
     public AluguelController () {
             aluguel = new Aluguel();
             exibeLista();
-    }
-
-    public Aluguel getAluguel() {
-        return aluguel;
-    }
-
-    public void setAluguel(Aluguel aluguel) {
-        this.aluguel = aluguel;
     }
 
     public void salvaAluguel() {

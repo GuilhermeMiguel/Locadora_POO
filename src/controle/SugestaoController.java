@@ -4,8 +4,10 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
 import DAO.SugestaoDAO;
+import lombok.Data;
 import modelo.Sugestao;
 
+@Data
 @ManagedBean
 @RequestScoped
 public class SugestaoController {
@@ -15,14 +17,6 @@ public class SugestaoController {
 
 	public SugestaoController() {
 		sugestao = new Sugestao();
-	}
-
-	public Sugestao getSugestao() {
-		return sugestao;
-	}
-
-	public void setSugestao(Sugestao sugestao) {
-		this.sugestao = sugestao;
 	}
 
 	public void salvaSugestao() {
@@ -37,5 +31,5 @@ public class SugestaoController {
 		sugestao.setTelefone_02("");
 		sugestao.setAssunto("");
 		sugestao.setTexto("");
-	}
+	} 
 }
